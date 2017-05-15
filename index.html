@@ -3,15 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Presentation Title"> <!-- TODO: Fill in title -->
+		<meta name="author" content="Full Name"> <!-- TODO: Fill in name -->
 
-		<title>reveal.js</title>
+		<title>Presentation Title</title> <!-- TODO: Fill in title -->
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
+		<link rel="stylesheet" href="css/theme/government-digital-service.css" id="theme">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -24,8 +22,86 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="intro"
+								 data-background-image="images/cabinet-office-logo.png"
+								 data-background-repeat="no-repeat"
+								 data-background-size="auto auto"
+								 data-background-position="1.8em 3.2em">
+					<p><strong>Full Name</strong></p>
+					<p>Government Digital Service</p>
+
+					<aside class="notes">
+						This is a title slide.
+					</aside>
+				</section>
+
+				<section class="heading" data-background-color="#0076c0">
+					<h1>This is a main heading</h1>
+
+					<aside class="notes">
+						This slide format is for headings or section breaks.
+					</aside>
+				</section>
+
+				<section class="heading"
+								 data-background-image="images/image_heading_slide_background.jpg">
+					<h1>This is a main heading</h1>
+
+					<aside class="notes">
+						This slide format is for headings or section breaks with an image.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						This is a text slide
+					</p>
+
+					<aside class="notes">
+						This should be what most of your slides look like
+					</aside>
+				</section>
+
+				<section class="heading"
+								 data-background-image="images/image_slide_background.jpg">
+					<aside class="notes">
+						Pictures should be full bleed, with no footer.
+					</aside>
+				</section>
+
+				<section data-background-image="images/screenshot_slide_background.png">
+					<aside class="notes">
+						Screenshots should look like this.
+					</aside>
+				</section>
+
+				<section data-background-image="images/annotated_screenshot.png"
+								 data-background-repeat="no-repeat"
+								 data-background-size="16em auto"
+								 data-background-position="right 2em top">
+					<p style="width: 10em;">
+						This is how to annotate a screenshot
+					</p>
+
+					<aside class="notes">
+						Annotated screenshots should look like this.
+					</aside>
+				</section>
+
+				<section class="outro"
+								 data-background-image="images/cabinet-office-logo.png"
+								 data-background-repeat="no-repeat"
+								 data-background-size="auto auto"
+								 data-background-position="1.8em 3.2em">
+					<p><strong>Full Name</strong></p> <!-- TODO: Fill in name -->
+					<p>Government Digital Service</p>
+				</section>
+
+				<footer>
+					<span style="float: right;">
+						<abbr title="Government Digital Service">GDS</abbr>
+					</span>
+				</footer>
 			</div>
 		</div>
 
@@ -37,11 +113,22 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: '100%',
+				height: '100%',
+				margin: 0,
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+				showNotes: window.location.search.match(/print-pdf/gi) ? 'seperate-page' : false,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				backgroundTransition: 'none',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
