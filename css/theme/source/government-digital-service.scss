@@ -1,0 +1,124 @@
+/**
+ * Government Digital Service theme for reveal.js.
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #e6e6e6;
+
+$mainColor: #222;
+$headingColor: #222;
+
+$mainFontSize: 2.8em;
+$mainFont: Helvetica, sans-serif;
+$headingFont: Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+section.has-dark-background {
+    &, h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+}
+
+blockquote {
+}
+
+.reveal pre {
+    border-left: 4px solid #666;
+    padding-left: 0.4em;
+    box-shadow: none;
+    font-size: 1em;
+}
+
+.reveal blockquote {
+    quotes: none;
+    border-left: 4px solid #666;
+    padding-left: 0.4em;
+
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: $blockMargin auto;
+    box-shadow: none;
+
+    font-style: italic;
+
+    > footer {
+        margin-top: 0.5em;
+    }
+}
+
+.reveal .slides {
+    text-align: left;
+
+    p {
+        font-size: 1.6em;
+    }
+
+    section {
+        padding: 1.8em;
+        width: unset;
+    }
+
+    .intro.present ~ footer {
+        display: none;
+    }
+    .outro.present ~ footer {
+        display: none;
+    }
+    .heading.present ~ footer {
+        display: none;
+    }
+
+    .heading h1 {
+        font-size: 4em;
+    }
+
+    .intro, .outro {
+        height: 80%;
+
+        p {
+            font-size: 2em;
+            margin-bottom: 0;
+            line-height: 0.9;
+            &:first-child {
+                margin-top: 45%;
+            }
+        }
+    }
+
+    > footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1% 6%;
+        font-size: 1.4em;
+        line-height: 1;
+        background: #0076c0;
+        color: #fff;
+        span abbr {
+            text-decoration: none;
+        }
+    }
+}
