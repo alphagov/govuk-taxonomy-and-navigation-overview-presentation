@@ -89,6 +89,9 @@ blockquote {
     .heading.present ~ footer {
         display: none;
     }
+    .no-footer.present ~ footer {
+        display: none;
+    }
 
     .heading h1 {
         font-size: 4em;
