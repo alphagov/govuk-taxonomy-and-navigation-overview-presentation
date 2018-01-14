@@ -325,11 +325,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   .reveal .slides .intro, .reveal .slides .outro {
     height: 80%; }
     .reveal .slides .intro p, .reveal .slides .outro p {
-      font-size: 2em;
+      font-size: 1.6em;
       margin-bottom: 0;
       line-height: 0.9; }
       .reveal .slides .intro p:first-child, .reveal .slides .outro p:first-child {
-        margin-top: 45%; }
+        margin-top: 4.5em; }
+  .reveal .slides .outro p:first-child {
+    margin-bottom: 1em; }
   .reveal .slides > footer {
     position: absolute;
     bottom: 0;
