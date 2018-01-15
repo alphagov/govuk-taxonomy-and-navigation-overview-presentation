@@ -89,6 +89,9 @@ blockquote {
     .heading.present ~ footer {
         display: none;
     }
+    .no-footer.present ~ footer {
+        display: none;
+    }
 
     .heading h1 {
         font-size: 4em;
@@ -98,12 +101,18 @@ blockquote {
         height: 80%;
 
         p {
-            font-size: 2em;
+            font-size: 1.6em;
             margin-bottom: 0;
             line-height: 0.9;
             &:first-child {
-                margin-top: 45%;
+                margin-top: 4.5em;
             }
+        }
+    }
+
+    .outro {
+        p:first-child {
+            margin-bottom: 1em;
         }
     }
 
