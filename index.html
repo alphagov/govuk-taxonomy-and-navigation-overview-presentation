@@ -3,21 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="description" content="Presentation Title"> <!-- TODO: Fill in title -->
-		<meta name="author" content="Full Name"> <!-- TODO: Fill in name -->
+		<meta name="description" content="GOV.UK Taxonomy and Navigation: An overview">
 
-		<title>Presentation Title</title> <!-- TODO: Fill in title -->
+		<title>GOV.UK Taxonomy and Navigation: An overview</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/government-digital-service.css" id="theme">
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <style>
+     .half-width {
+         width: 45% !important;
+     }
+    </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -27,80 +23,465 @@
 								 data-background-repeat="no-repeat"
 								 data-background-size="auto auto"
 								 data-background-position="1.8em 3.2em">
-					<p><strong>Full Name</strong></p> <!-- TODO: Fill in name -->
-					<p>Job Title</p> <!-- TODO: Fill in job title -->
-					<p>Government Digital Service</p>
-					<p>@twitterhandle</p> <!-- TODO: Fill in twitter handle -->
+					<p><strong>GOV.UK Taxonomy and Navigation</strong></p>
+					<p>An overview</p>
 
-					<aside class="notes">
-						This is a title slide.
-					</aside>
+					<aside class="notes" data-markdown>
+            This presentation is an introduction and overview for the
+					  Taxonomy and Navigation parts of GOV.UK.
+          </aside>
 				</section>
 
-				<section class="heading" data-background-color="#0076c0">
-					<h1>This is a main heading</h1>
+        <section>
+          <h1>Taxonomy</h1>
 
-					<aside class="notes">
-						This slide format is for headings or section breaks.
-					</aside>
-				</section>
+          <p>Something about classification...</p>
 
-				<section class="heading"
-								 data-background-image="images/image_heading_slide_background.jpg">
-					<h1 style="color: #fff">This is an image heading slide</h1>
+          <aside class="notes" data-markdown>
+            Taxonomy is a unusual work, normally associated with
+            science, especially biology.
 
-					<aside class="notes">
-						This slide format is for headings or section breaks with an image.
-					</aside>
-				</section>
+            In general, it's about classification.
+          </aside>
+        </section>
 
-				<section>
-					<p>
-						This is a text slide
-					</p>
+        <section>
+          <h1>Topic Taxonomy</h1>
 
-					<aside class="notes">
-						This should be what most of your slides look like
-					</aside>
-				</section>
+          <p>
+            "The Topic Taxonomy is a classification scheme for
+            organising and finding content on GOV.UK, based on its
+            subject area."
+          </p>
 
-				<section class="no-footer"
-								 data-background-image="images/image_slide_background.jpg">
-					<aside class="notes">
-						Pictures should be full bleed, with no footer.
-					</aside>
-				</section>
+          <aside class="notes" data-markdown>
+            GOV.UK has a "Topic Taxonomy". This is both the
+            description, and the proper noun.
 
-				<section data-background-image="images/screenshot_slide_background.png">
-					<aside class="notes">
-						Screenshots should look like this.
-					</aside>
-				</section>
+            The key part about the Topic Taxonomy is that it
+            classifies and groups content on GOV.UK by subject area,
+            what the content is about.
 
-				<section data-background-image="images/annotated_screenshot.png"
-								 data-background-repeat="no-repeat"
-								 data-background-size="45% auto"
-								 data-background-position="right 5% top">
-					<p style="width: 50%;">
-						This is how to annotate a screenshot
-					</p>
+            This excludes grouping content by entities, e.g. People,
+            Oranisations, Countries, Languages. Even if you say this
+            content is "about" a person, having a taxon representing a
+            person would not fit within the Topic Taxonomy.
 
-					<aside class="notes">
-						Annotated screenshots should look like this.
-					</aside>
-				</section>
+            This is not to say that recording association with
+            entities is not useful, it normally is. Just that it
+            should be done through other means.
+          </aside>
+        </section>
 
-				<section class="outro"
-								 data-background-image="images/cabinet-office-logo.png"
-								 data-background-repeat="no-repeat"
-								 data-background-size="auto auto"
-								 data-background-position="1.8em 3.2em">
-					<p><strong>Thanks!</strong></p>
-					<p>Full Name</p> <!-- TODO: Fill in name -->
-					<p>@twitterhandle</p> <!-- TODO: Fill in twitter handle -->
-				</section>
+        <section>
+          <h2>Topic Taxonomy Structure</h2>
+          <img src="images/taxonomy-tree.png" />
+          <ul>
+            <li>It's a (mathematical) tree</li>
+            <li>The root is the homepage</li>
+          </ul>
 
-				<footer>
+          <aside class="notes" data-markdown>
+            The Topic Taxonomy is a tree, in the mathematical sense.
+
+            The root is the homepage, and the nodes are content items
+            with a `document_type` of `taxon`.
+
+            Links in the Publishing API are used for the edges in the
+            tree, in total 4 link types are used, two are explicit,
+            and two are implicit.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Aboutness and Specificity</h2>
+          <img src="images/taxonomy-list.png" />
+          <ul>
+            <li>The Topic Taxonomy is about the subject area of content, or "aboutness"</li>
+            <li>Taxons lower down the tree should be more specific</li>
+          </ul>
+
+          <aside class="notes" data-markdown>
+            As you go down the tree, the subject area covered by the
+            individual taxons should get smaller, and more specific.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Content is "tagged" to taxons</h2>
+          <img src="images/taxonomy-bubbles.png" />
+          <p>
+            This is a visualisation of the volume of content tagged to
+            each taxon.
+          </p>
+
+          <aside class="notes" data-markdown>
+            Content on GOV.UK can be tagged to one or more
+            taxons. This association is also represented by a link in
+            the Publishing API with the `link_type` taxons.
+
+            This is a visualisation in Content Tagger showing the
+            volume of content tagged to these taxons.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Topic Taxonomy Scope</h2>
+
+          <p>
+            All content items, except the ones that aren't content...
+          </p>
+
+          <ul>
+            <li>taxon</li>
+            <li>person</li>
+            <li>gone</li>
+            <li>...</li>
+          </ul>
+
+          <small>
+            <p>
+              For the full list, see 
+              <a href="https://github.com/alphagov/content-tagger/blob/master/config/document_types_excluded_from_the_topic_taxonomy.yml">
+                document_types_excluded_from_the_topic_taxonomy.yml
+              </a>
+            </p>
+          </small>
+
+          <aside class="notes" data-markdown>
+            For measuring the amount of content tagged to the Topic
+            Taxonomy, we need a way of distinguishing the content on
+            GOV.UK which is actually content, from the Content which
+            isn't.
+
+            To do this, there is a list of `document_type`s which are
+            considered out of scope.
+
+            For example, `taxon` is out of scope as the content items
+            of `document_type` taxon represent nodes in the Topic
+            Taxnomy.
+
+            Content items with a `document_type` of gone are used to
+            represent content which has been unpublished, so these are
+            excluded.
+          </aside>
+        </section>
+
+        <section data-background-iframe="https://grafana.publishing.service.gov.uk/dashboard/file/topic_taxonomy.json?refresh=5m&orgId=1&from=now-6M&to=now">
+          <aside class="notes" data-markdown>
+            With this list of excluded document types, you can work
+            out how much content (excluding the out of scope content)
+            is present on GOV.UK, and how much of that is tagged to
+            the Topic Taxonomy.
+
+            This is monitored and recorded in Graphite, and visible on
+            this Grafana dashboard.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Uses of the Topic Taxonomy</h2>
+
+          <ul>
+            <li>Topic pages</li>
+            <li>Email subscriptions</li>
+            <li>...</li>
+          </ul>
+
+          <aside class="notes" data-markdown>
+            The Topic Taxonomy should be thought about as a source of
+            information.
+
+            That information can be used in various ways, for example,
+            navigation pages, email subscriptions, and maybe other
+            things.
+          </aside>
+        </section>
+
+        <section>
+          <h1>Navigation</h1>
+
+          <aside class="notes" data-markdown>
+            Which brings us to navigation.
+          </aside>
+        </section>
+        
+        <section class="half-width">
+          Not so new anymore,<br>
+          Topic taxonomy powered
+          <h2>Topic Pages</h2>
+
+          <dl>
+            <dt>Since</dt>
+            <dd>
+              "beta" in March, 2017<br>
+              New design as of March, 2018
+            </dd>
+
+            <dt>Managed through</dt>
+            <dd>Content Tagger</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Collections</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/taxon.html">
+                taxon
+              </a>
+            </dd>
+          </dl>
+
+          <iframe src="https://www.gov.uk/education"
+                  title="Example Topic Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+
+          <aside class="notes">
+            Work on navigation pages powered by the Topic Taxonomy
+            began in the Finding Things team, and the "beta" happened
+            back in March 2017.
+
+            In March this year, around Quarter 4, the new design for
+            the Topic Taxonomy powered navigation pages, now called
+            Topic Pages was deployed.
+
+            The big change in this 2nd iteration is that more content
+            is accessible from the pages, previously it was limited to
+            guidance content.
+          </aside>
+        </section>
+
+        <section class="half-width">
+          A tangent about
+          <h2>Worldwide taxons</h2>
+
+          <ul>
+            <li>
+              Currently use the 1st iteration of the design for
+              "topic" pages
+            </li>
+          </ul>
+          
+          <dl>
+            <dt>Since</dt>
+            <dd>June, 2017</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Collections</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/taxon.html">
+                taxon
+              </a>
+            </dd>
+          </dl>
+
+          <iframe src="https://www.gov.uk/world/france"
+                  title="Example Worldwide Taxon Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+
+          <aside class="notes" data-markdown>
+            Back in the last Q1, some work was done on the Worldwide
+            pages on GOV.UK.
+
+            This is an example of a page about France. While these are
+            taxons, they don't fit within the Topic Taxonomy, as this
+            is a grouping of content by country or geographical area.
+
+            The Worldwide pages use the previous design for the taxons
+            in the Topic Taxonomy.
+
+            There is one point of crossover between the Worldwide
+            pages, and the Topic Taxonomy, in the Whitehall tagging
+            interface. This should be resolved this quarter though.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Other navigation page types</h2>
+
+          <ul>
+            <li>Mainstream browse</li>
+            <li>Policies</li>
+            <li>Policy areas</li>
+            <li>Specialist Topics</li>
+            <li>...</li>
+          </ul>
+
+          <aside class="notes" data-markdown>
+            Policies (Since Sep 2011)
+            - https://github.com/alphagov/whitehall/commit/08a8eb2568eb3a7a6606a9f0ef8685545ea986b4
+            - Policy areas (Since Dec 2011)
+            - "Rename topic URLs to use policy area instead"
+            - https://github.com/alphagov/whitehall/commit/e47ec042078e1b0670d0d1c3e376c636a235a2fb
+            - Specialist Topics (2014)
+            - Replacing "existing topic pages", which are policy areas
+            - https://insidegovuk.blog.gov.uk/2014/03/20/specialist-topic-pages/
+          </aside>
+        </section>
+
+        <section class="half-width">
+          <h2>Mainstream Browse</h2>
+          <dl>
+            <dt>Since</dt>
+            <dd>Launch</dd>
+
+            <dt>Managed through</dt>
+            <dd>Collections Publisher</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Collections</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/mainstream_browse_page.html">
+                mainstream_browse_page
+              </a>
+            </dd>
+          </dl>
+
+          <iframe src="https://www.gov.uk/browse/childcare-parenting/fostering-adoption-surrogacy"
+                  title="Example Mainstream Browse Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+        </section>
+
+        <section class="half-width">
+          <h2>Policies</h2>
+
+          <dl>
+            <dt>Since</dt>
+            <dd>Launch</dd>
+
+            <dt>Managed through</dt>
+            <dd>Policy Publisher</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Finder Frontend</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/policy.html">
+                policy
+              </a>
+            </dd>
+          </dl>
+
+          <iframe src="https://www.gov.uk/government/policies/criminal-justice-reform"
+                  title="Example Policy Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+        </section>
+
+        <section class="half-width">
+          <h2>Policy Areas</h2>
+
+          <dl>
+            <dt>Since</dt>
+            <dd>Launch</dd>
+
+            <dt>Managed through</dt>
+            <dd>Whitehall</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Whitehall</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/policy_area.html">
+                policy_area
+              </a>
+            </dd>
+          </dl>
+          
+          <iframe src="https://www.gov.uk/government/topics/foreign-affairs"
+                  title="Example Policy Area Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+        </section>
+
+        <section class="half-width">
+          <h3>(Specialist) Topics/<br>Specialist Sectors</h3>
+
+          <dl>
+            <dt>Since</dt>
+            <dd>~2014</dd>
+
+            <dt>Managed through</dt>
+            <dd>Collections Publisher</dd>
+
+            <dt>Rendered by</dt>
+            <dd>Collections</dd>
+
+            <dt>Document type</dt>
+            <dd>
+              <a href="https://docs.publishing.service.gov.uk/document-types/topic.html">
+                topic
+              </a>
+            </dd>
+          </dl>
+
+          <aside class="notes">
+
+            https://insidegovuk.blog.gov.uk/2014/03/20/specialist-topic-pages/
+
+          </aside>
+
+          <iframe src="https://www.gov.uk/topic/local-government/council-tax"
+                  title="Example Specialist Sector Page"
+                  style="position: fixed; top: 0; right: 0; border: 0; width: 50%; height: 92%;"
+          >
+          </iframe>
+        </section>
+
+        <section>
+          <h3>Other navigation page types</h3>
+
+          <ul>
+            <li>Document collection</li>
+          </ul>
+
+          <aside class="notes" data-markdown>
+            There is another document type related to navigation which
+            I can think of, which is the `document_collection`.
+
+            These can be created in Whitehall, and are heavily
+            curated.
+          </aside>
+        </section>
+        
+        <section>
+          <h2>Points of reference</h2>
+
+          <ul>
+            <li>
+              <a href="https://gov-uk.atlassian.net/wiki/spaces/GOVUK/pages/261619747/Timeline+of+GOV.UK+s+information+architecture">
+                Timeline of GOV.UKs information architecture
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.publishing.service.gov.uk/manual/taxonomy.html">
+                GOV.UK Developer Documentation on the Topic Taxonomy
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.google.com/document/d/1DQRTt0AYuPXSHkYvpcwPEEUDc3MHN2VubgYJA-hzeOM/edit">
+                How the (on page) navigation works (Google Doc)
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- High z-index to cover the bottom of the iframes -->
+				<footer style="z-index: 999;">
 					<span style="float: right;">
 						<abbr title="Government Digital Service">GDS</abbr>
 					</span>
@@ -123,13 +504,15 @@
 				progress: false,
 				history: true,
 				center: true,
-				showNotes: window.location.search.match(/print-pdf/gi) ? 'separate-page' : false,
+				showNotes: window.location.search.match(/hide-notes/gi) ? false : true,
 
 				transition: 'none', // none/fade/slide/convex/concave/zoom
 				backgroundTransition: 'none',
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true },
 				]
